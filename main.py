@@ -53,7 +53,7 @@ if bot_environment == "dev":
 elif bot_environment == "prod":
     bot_name = "LuckGamble"
     admin_id =  1493164653
-    group_id = -1002040392620 
+    group_id = -1002366180097 
     bot_token = os.getenv('BOT_TOKEN_PROD')
     telegram_link = "https://t.me/LuckGamblebot"
     bot_player = Bot(bot_token)
