@@ -5,9 +5,9 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.ext import CallbackContext
 
 hilo_file = "Hilo.json"
-group_id = -4556744769
+group_id = -1002366180097
 house_wallet_id = 1234
-admin_id = 6066784716
+admin_id = 1493164653
 global_game_active = False
 min_bet = 0.5
 max_bet = 10
@@ -16,7 +16,7 @@ def start_dh(update: Update, context: CallbackContext):
     global global_game_active
     user_id = update.effective_user.id
     if update.effective_chat.id != group_id:
-        update.message.reply_text("Game can only be played in Diceable Casino Group.")
+        update.message.reply_text("Game can only be played in LuckGamble Group.")
         return
     if global_game_active:
         update.message.reply_text("A game is already active. Please wait for it to finish.")
