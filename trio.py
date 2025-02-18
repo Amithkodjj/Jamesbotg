@@ -10,7 +10,7 @@ from telegram.ext import CallbackContext
 
 DATABASE = 'dice.db'
 TRIO_GAME_FILE = 'trio.json'
-GROUP_ID =  -1002040392620
+GROUP_ID =  -1002366180097
 dr_min = 0.5
 dr_max = 10.0
 
@@ -191,7 +191,7 @@ def handle_trio_choice(update: Update, context: CallbackContext):
         update_house_balance(new_house_balance)
         result_message = f"✅ You win! You win ${winnings:.2f}."
 
-        wins_channel_id = "@diceablewins"
+        wins_channel_id = "@LuckGamblewins"
         wins_message = f"@{username} Just Won ${winnings:.2f} in 🔮 Trio"
         context.bot.send_message(chat_id=wins_channel_id, text=wins_message)
 
