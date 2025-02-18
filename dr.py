@@ -11,7 +11,7 @@ DATABASE = 'dice.db'
 GAME_DATA_FILE = 'dr.json'
 dr_min = 0.5
 dr_max = 10
-GROUP_ID = -1002040392620
+GROUP_ID = -1002366180097
 
 def load_game_data():
     try:
@@ -72,7 +72,7 @@ def start_dice_roulette(update, context):
     global dr_data
     chat_id = update.effective_chat.id
     if chat_id != GROUP_ID:
-        update.message.reply_text("This game can only be played in Diceable Casino Group")
+        update.message.reply_text("This game can only be played in LuckGamble Group")
         return
     user_id = str(update.effective_user.id)
     if user_id in dr_data and dr_data[user_id]['status'] == 'playing':
@@ -166,7 +166,7 @@ def roll_dice(update, context, game_id):
         update_bot_balance(winnings)
         update_wallet_stats(user_id, bet_amount, winnings)
         result_message = f"✅ You win! Bot rolled {dice_value} 🎲. Payout of ${winnings:.2f} has been added."
-        wins_channel_id = "@diceablewins"
+        wins_channel_id = "@LuckGamblewins"
         wins_message = f"@{username} just won ${winnings:.2f} in 🎲 Dice Roulette!"
         context.bot.send_message(chat_id=wins_channel_id, text=wins_message)
     else:
